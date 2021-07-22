@@ -55,14 +55,14 @@ def main():
     else:
         port = config('PORT', cast=int)
 
-    updater.start_webhook(listen="0.0.0.0",
-                          port=port,
-                          url_path=TELEGRAM_TOKEN)
-    updater.bot.setWebhook(f'https://{APP_NAME_HEROKU}.herokuapp.com/{TELEGRAM_TOKEN}')
+        updater.start_webhook(listen="0.0.0.0",
+                              port=port,
+                              url_path=TELEGRAM_TOKEN)
+        updater.bot.setWebhook(f'https://{APP_NAME_HEROKU}.herokuapp.com/{TELEGRAM_TOKEN}')
 
-    updater.idle()
+        updater.idle()
 
 
-if __name__ == '__main__':
-    print('Bot em execução')
+if __name__ == "__main__":
+    print("Bot em execução.")
     main()
